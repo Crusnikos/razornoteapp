@@ -10,4 +10,13 @@
 		<NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<EmbeddedResource Include="Migrations/*.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="dbup-postgresql" Version="4.6.3" />
+	  <PackageReference Include="linq2db" Version="4.2.0" />
+	</ItemGroup>
+
 </Project>
