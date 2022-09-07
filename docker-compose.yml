@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  razorpages:
+    build:
+      context: ./razorpages
+      dockerfile: dev.Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./razorpages:/app
+    ports:
+      - 5000:80
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=development
+      - ASPNETCORE_URLS=http://+:80
+
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: noteapp
+      POSTGRES_PASSWORD: noteapp
+      POSTGRES_DB: noteapp
+    ports:
+      - 5432:5432

@@ -1,0 +1,8 @@
+razorpages/**/bin
+razorpages/**/obj
+.idea
+.vscode
+.vs
+razorpages/**/*.user
+dist
+razorpages/**/*.xml
