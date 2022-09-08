@@ -17,49 +17,12 @@ namespace RazorPagesNoteManagerApp.Pages
             _databaseFactory = databaseFactory;
         }
 
-        protected async Task<List<Note>> GetNotes(CancellationToken cancellationToken = default)
-        {
-            await using var db = _databaseFactory();
-
-            return await db.Notes.ToListAsync(cancellationToken);
-        }
-
         [BindProperty]
         public List<Note> NotesData { get; set; }
 
         public async Task OnGet()
         {
-            NotesData = new List<Note>();
-
-            NotesData.Add(new Note 
-            {
-                NoteId = 1,
-                ArticleId = 1,
-                Text = "Just simple note",
-                Author = "michalkubrak.90@gmail.com",
-                CreatedAt = DateTime.Now,
-                Hided = false
-            });
-
-            NotesData.Add(new Note
-            {
-                NoteId = 2,
-                ArticleId = 1,
-                Text = "Just another simple note",
-                Author = "michalkubrak.90@gmail.com",
-                CreatedAt = DateTime.Now,
-                Hided = false
-            });
-
-            NotesData.Add(new Note
-            {
-                NoteId = 3,
-                ArticleId = 1,
-                Text = "Just another, another simple note",
-                Author = "michalkubrak.90@gmail.com",
-                CreatedAt = DateTime.Now,
-                Hided = false
-            });
+            NotesData = await _databaseFactory().Notes.ToListAsync();
         }
     }
 }

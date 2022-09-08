@@ -10,7 +10,7 @@ builder.Services.AddSingleton<Database.Factory>(_ => () => new Database(postgres
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+//Configure the HTTP request pipeline.
 
 Console.WriteLine("Starting the application");
 var configuration = app.Services.GetService<IConfiguration>();
