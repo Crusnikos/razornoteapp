@@ -11,33 +11,3 @@
 	voted_down integer,
 	hided boolean not null
 );
-
-insert
-into note (
-    article_id,
-    note,
-    author,
-    hided
-)
-values
-(
-    1,
-    'just simple note',
-    'michalkubrak.90@gmail.com',
-    FALSE
-);
-
-insert
-into note (
-    article_id,
-    note,
-    author,
-    hided
-)
-values
-(
-    2,
-    'just another simple note',
-    'michalkubrak.90@gmail.com',
-    FALSE
-);

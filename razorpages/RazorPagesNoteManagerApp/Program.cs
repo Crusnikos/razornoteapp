@@ -3,7 +3,10 @@ using RazorPagesNoteManagerApp.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AddPageRoute("/Index/Index", "");
+});
 
 var postgresConnection = builder.Configuration.GetConnectionString("MainDatabase");
 builder.Services.AddSingleton<Database.Factory>(_ => () => new Database(postgresConnection));

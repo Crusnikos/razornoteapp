@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorPagesNoteManagerApp.Data;
 using RazorPagesNoteManagerApp.Data.Models;
 
-namespace RazorPagesNoteManagerApp.Pages
+namespace RazorPagesNoteManagerApp.Pages.Index
 {
     public class IndexModel : PageModel
     {
@@ -18,11 +18,17 @@ namespace RazorPagesNoteManagerApp.Pages
         }
 
         [BindProperty]
-        public List<Note> NotesData { get; set; }
+        public SortedNotes NotesData { get; set; }
 
         public async Task OnGet()
         {
-            NotesData = await _databaseFactory().Notes.ToListAsync();
+            await using var db = _databaseFactory();
+
+            NotesData = new SortedNotes
+            {
+                Notes = await db.Notes.Where(n => n.AnswerOn == null).ToListAsync(HttpContext.RequestAborted),
+                NotesAnswers = await db.Notes.Where(n => n.AnswerOn != null).ToListAsync(HttpContext.RequestAborted)
+            };
         }
     }
 }
