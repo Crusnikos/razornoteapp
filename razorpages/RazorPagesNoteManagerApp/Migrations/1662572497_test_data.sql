@@ -31,6 +31,30 @@ values
     FALSE,
     2,
     3
+),
+(
+    4,
+    'fourth another simple note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur justo tortor, porta eleifend turpis sed, efficitur consectetur purus. Pellentesque habitant morbi tristique senectus et netus.',
+    'michalkubrak.90@gmail.com',
+    FALSE,
+    2,
+    3
+),
+(
+    5,
+    'fifth another simple note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur justo tortor, porta eleifend turpis sed, efficitur consectetur purus. Pellentesque habitant morbi tristique senectus et netus.',
+    'michalkubrak.90@gmail.com',
+    FALSE,
+    2,
+    3
+),
+(
+    6,
+    'sixth another simple note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur justo tortor, porta eleifend turpis sed, efficitur consectetur purus. Pellentesque habitant morbi tristique senectus et netus.',
+    'michalkubrak.90@gmail.com',
+    FALSE,
+    2,
+    3
 );
 
 insert
@@ -70,4 +94,22 @@ values
     15,
     101,
     2
+),
+(
+    4,
+    'first answer on fourth simple note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie nisi eros, et feugiat purus consectetur sed. Nullam mattis metus risus. Cras pulvinar vitae velit.',
+    'testmail1234567@gmail.com',
+    FALSE,
+    15,
+    101,
+    4
+),
+(
+    6,
+    'first answer on sixth simple note. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie nisi eros, et feugiat purus consectetur sed. Nullam mattis metus risus. Cras pulvinar vitae velit.',
+    'testmail1234567@gmail.com',
+    FALSE,
+    15,
+    101,
+    6
 );
